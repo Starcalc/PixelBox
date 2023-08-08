@@ -24,6 +24,7 @@
 #define PATTERN_FILL            (PATTERN_SNAKE + 10)
 #define PATTERN_SPARKLEW        (PATTERN_SNAKE + 11)
 #define PATTERN_RANDOMFILL      (PATTERN_SNAKE + 12)
+#define LAST_NEWMATRIX_PATTERN  (PATTERN_SNAKE + 12)
 
 class NewMatrix: public MatrixSnake {
 public:
