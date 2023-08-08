@@ -274,6 +274,7 @@ bool onSetColor1(const HomieRange& range, const String& value) {
                 tDuration * 2, (tColor & DIRECTION_DOWN));
 ***/
 bool onSetEffect(const HomieRange& range, const String& value) {
+  Serial.println(value);
   LongUnion tRandom;
   tRandom.Long = random();
   uint8_t tColor = tRandom.UBytes[1];
@@ -804,27 +805,27 @@ void loop() {
   if ((millis() - lastUpdateCounter) > updateInterval) {
     effectCounter++;
     Serial.println(effectCounter);
-    switch (effectCounter%20) {
+    switch (effectCounter%16) {
       case 0:
         onSetEffect(HomieRange(), "scanner");
         break;
       case 1:
-        onSetEffect(HomieRange(), "stripes"); // ???
+        onSetEffect(HomieRange(), "text|Welcome");
         break;
       case 2:
         onSetEffect(HomieRange(), "plasma");
         break;
       case 3:
-        onSetEffect(HomieRange(), "gameoflife");
+        onSetEffect(HomieRange(), "gameoflifec");
         break;
       case 4:
         onSetEffect(HomieRange(), "snow");
         break;
       case 5:
-        onSetEffect(HomieRange(), "randomscanner");
+        onSetEffect(HomieRange(), "sparkle");
         break;
       case 6:
-        onSetEffect(HomieRange(), "larsonspiral");
+        onSetEffect(HomieRange(), "snake");
         break;
       case 7:
         onSetEffect(HomieRange(), "rainbowcycle");
@@ -833,13 +834,15 @@ void loop() {
         onSetEffect(HomieRange(), "theaterchase");
         break;
       case 9:
-        onSetEffect(HomieRange(), "fade"); // Kaputt?
+        onSetInterval(HomieRange(), "500");
+        onSetEffect(HomieRange(), "fade"); // Too fast / broken
         break;
       case 10:
+        onSetInterval(HomieRange(), "200");
         onSetEffect(HomieRange(), "smooth"); //example: smooth|[wheelspeed]|[smoothing]|[strength] wheelspeed=1-255, smoothing=0-100, strength=1-255
         break;
       case 11:
-        onSetEffect(HomieRange(), "heartbeat"); // Läuft durch statt zu blinken
+        onSetEffect(HomieRange(), "heartbeat"); // Looks nicer on a singular strip
         break;
       case 12:
         onSetEffect(HomieRange(), "heart");
@@ -851,19 +854,7 @@ void loop() {
         onSetEffect(HomieRange(), "plasma4");
         break;
       case 15:
-        onSetEffect(HomieRange(), "striped"); // Kaputt?
-        break;
-      case 16:
-        onSetEffect(HomieRange(), "stars"); // Kaputt?
-        break;
-      case 17:
-        onSetEffect(HomieRange(), "gameoflife");
-        break;
-      case 18:
-        onSetEffect(HomieRange(), "snake");
-        break;
-      case 19:
-        onSetEffect(HomieRange(), "sparkle");
+        onSetEffect(HomieRange(), "gameoflife"); 
         break;
     }
 
