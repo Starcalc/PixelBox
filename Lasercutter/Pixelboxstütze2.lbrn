@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightBurnProject AppVersion="0.8.07" MaterialHeight="0">
+    <CutSetting type="Cut">
+        <index Value="0"/>
+        <name Value="C00"/>
+        <minPower Value="10"/>
+        <maxPower Value="100"/>
+        <minPower2 Value="10"/>
+        <maxPower2 Value="20"/>
+        <speed Value="50"/>
+        <kerf Value="0"/>
+        <zOffset Value="0"/>
+        <enableLaser1 Value="1"/>
+        <enableLaser2 Value="0"/>
+        <startDelay Value="0"/>
+        <endDelay Value="0"/>
+        <throughPower Value="0"/>
+        <enableCutThrough Value="0"/>
+        <priority Value="0"/>
+        <frequency Value="20000"/>
+        <overrideFrequency Value="0"/>
+        <PPI Value="0"/>
+        <enablePPI Value="0"/>
+        <doOutput Value="1"/>
+        <hide Value="0"/>
+        <runBlower Value="1"/>
+        <blowerSpeedOverride Value="0"/>
+        <blowerSpeedPercent Value="100"/>
+        <numPasses Value="2"/>
+        <zPerPass Value="0"/>
+        <perforate Value="0"/>
+        <perfLen Value="0.01"/>
+        <perfSkip Value="0.01"/>
+        <dotMode Value="0"/>
+        <dotTime Value="1"/>
+        <dotSpacing Value="0.1"/>
+        <scanOpt Value="mergeAll"/>
+        <bidir Value="1"/>
+        <crossHatch Value="0"/>
+        <overscan Value="0"/>
+        <overscanPercent Value="2.5"/>
+        <floodFill Value="0"/>
+        <interval Value="0.1"/>
+        <angle Value="0"/>
+    </CutSetting>
+    <Shape Type="Path" CutIndex="0">
+        <XForm>1 0 0 1 419.095 185.716</XForm>
+        <V vx="-26" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-26" vy="92" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-80" vy="92" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-80" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-54.5" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-54.5" vy="77" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-51" vy="77" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-51" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <P T="L" p0="0" p1="1"/>
+        <P T="L" p0="1" p1="2"/>
+        <P T="L" p0="2" p1="3"/>
+        <P T="L" p0="3" p1="4"/>
+        <P T="L" p0="4" p1="5"/>
+        <P T="L" p0="5" p1="6"/>
+        <P T="L" p0="6" p1="7"/>
+        <P T="L" p0="7" p1="0"/>
+    </Shape>
+    <Shape Type="Path" CutIndex="0">
+        <XForm>1 0 0 1 360.016 185.58</XForm>
+        <V vx="-26" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-26" vy="92" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-80" vy="92" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-80" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-54.5" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-54.5" vy="77" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-51" vy="77" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-51" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <P T="L" p0="0" p1="1"/>
+        <P T="L" p0="1" p1="2"/>
+        <P T="L" p0="2" p1="3"/>
+        <P T="L" p0="3" p1="4"/>
+        <P T="L" p0="4" p1="5"/>
+        <P T="L" p0="5" p1="6"/>
+        <P T="L" p0="6" p1="7"/>
+        <P T="L" p0="7" p1="0"/>
+    </Shape>
+    <Shape Type="Path" CutIndex="0">
+        <XForm>1 0 0 1 302.011 185.58</XForm>
+        <V vx="-26" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-26" vy="92" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-80" vy="92" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-80" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-54.5" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-54.5" vy="77" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-51" vy="77" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <V vx="-51" vy="57" c0x="1" c0y="0" c1x="1" c1y="0"/>
+        <P T="L" p0="0" p1="1"/>
+        <P T="L" p0="1" p1="2"/>
+        <P T="L" p0="2" p1="3"/>
+        <P T="L" p0="3" p1="4"/>
+        <P T="L" p0="4" p1="5"/>
+        <P T="L" p0="5" p1="6"/>
+        <P T="L" p0="6" p1="7"/>
+        <P T="L" p0="7" p1="0"/>
+    </Shape>
+    <Notes ShowOnLoad="0" Notes=""/>
+</LightBurnProject>
