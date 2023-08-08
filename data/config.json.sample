@@ -1,0 +1,16 @@
+{
+"name": "pixelbox",
+"device_id": "pixelbox",
+"wifi": {
+"ssid": "WLANSSID",
+"password": "WLANPASS"
+},
+"mqtt": {
+"host": "mqtthostname",
+"port": 1883,
+"auth": false
+},
+"ota": {
+"enabled": false
+}
+}
