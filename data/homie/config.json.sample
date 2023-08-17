@@ -1,17 +1,17 @@
 {
-"name": "pixelbox",
-"device_id": "pixelbox",
+"name": "nameofdevice",
+"device_id": "idofdevice",
 "wifi": {
-"ssid": "WLANSSID",
-"password": "WLANPASS"
+"ssid": "YOURSSID",
+"password": "YOURWIFIPASS"
 },
 "mqtt": {
-"host": "mqtthostname",
+"host": "your.mqtt.server",
 "port": 1883,
 "auth": false
 },
 "ota": {
-"enabled": false
+"enabled": true
 },
 "settings": {
     "NEOPIXEL_MATRIX_NUM_ROWS": 8,
