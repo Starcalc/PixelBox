@@ -45,6 +45,22 @@ NEO_MATRIX_CONFIGURATION: The first pixel must be at one of the four corners; wh
 
 NEO_PERMUTATION: Indicate the type of LED pixels being used.
 
+## Configuration within source code
+
+In PixelBox.cpp on line somewhere around 35, you can configure the WIFI-Connection-capabilities of the PixelBox. If you `#define NOWIFI`, the box will rotate through some effects and will repeat them forever. 
+
+```
+#define NOWIFI // Disable WIFI alltogether
+```
+
+If you don't `#define` it (e.g. comment the line out), you can configure your WIFI and MQTT-Server in the config.json. The PixelBox will connect there and you can set the new effect by publishing to its MQTT-path.
+
+Change the values for MQTT_HOST and "idofdevice" to the corresponding values and you can control your PixelBox via MQTT. You can easily add MQTT-commands in your [Home Assistant](https://www.home-assistant.io/) or [Node RED](https://nodered.org/).
+
+```
+mosquitto_pub -h MQTT_HOST -t "homie/idofdevice/pixel/effect/set" -m "rainbow"
+```
+
 ## Features
 ### LED 8x8 Field
 |Topic    |Descriptions  |settable   |Values   |
@@ -204,8 +220,8 @@ I recommend using Visual Studio Code. After successful installation, add the ext
 
 If you go to the "PlatformIO"-Icon in Visual Studio Code (it's an alien skull), under "Project Tasks", you'll find these two steps, which you should execute:
 
-d1_mini -> General -> Upload   -- to upload the code itself
-d1_mini -> Platform -> Upload Filesystem Image   -- to upload the config-File
+* To upload the code itself: d1_mini -> General -> Upload
+* To upload the config-File: d1_mini -> Platform -> Upload Filesystem Image
 
 -----
 # Thanks
