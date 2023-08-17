@@ -1,8 +1,7 @@
-Pixelbox Firmware
+# Pixelbox Firmware
 ====================
-## About
 
-# PixelBox
+## About
 Shows effects on different kind of models created with WS2812b-Stripes. The models can be simple stripes oder any rectangular shape. The configuration is done via a config.json and can be controlled via MQTT.
 
 Shows effects on different kind of models created with WS2812b-Stripes. The models can be simple stripes oder any rectangular shape. The configuration is done via a config.json and can be controlled via MQTT. 
@@ -187,3 +186,36 @@ This color will be used for the following effects:
 * *theaterchase*
 * *fade*
 
+## How to build the casing
+
+In the directory "Lasercutter" are the samples you can use for your lasercutter. You'll need one backplane, four sides all made from wood (we used poplar wood), 4mm strong. The cover should be a frosted plastic, 3-4mm strong, preferably white.
+
+For the "pixel" effect itself you'll need to seperate the individual LEDs, so from the "trenner.dxf", you'll need 14 overall. While putting everything together remember to put the small gap in a fashion that you can place the cables, which will be connecting the LED-stripes, into these gaps.
+
+I've added another hole where the first pixel is located to put the cables coming from the ESP8266 inside, that way the ESP8266 can be added on the backside of the pixelbox.
+
+If you want to use a very high brightness with all LEDs showing white, the box itself will pull a lot of current (~2A), which is just about too much for the little LED stripes to handle. You'll notice that the LEDs become more and more orange/brown until the end of the strip. If you add yet another hole somewhere in the middle and add the current only there, you can neglect the effect. Remember than to add not only the "data"-cable to the ESP8266, but the GND as well.
+
+Placing the LED-stripes I can recommend to arrange them in a "zig-zag"-manner, that way the config.json.sample will easily fit and you can add the cables between the stripes easily on one side, than on the other side.
+
+## How to build the software
+
+I recommend using Visual Studio Code. After successful installation, add the extension "PlatformIO" to Visual Studio Code and open the code from this repository. The "platformio.ini" is already configured for an WEMOS D1 mini R2.
+
+If you go to the "PlatformIO"-Icon in Visual Studio Code (it's an alien skull), under "Project Tasks", you'll find these two steps, which you should execute:
+
+d1_mini -> General -> Upload   -- to upload the code itself
+d1_mini -> Platform -> Upload Filesystem Image   -- to upload the config-File
+
+
+# Thanks
+
+A big shoutout to these people who made this Pixelbox possible:
+
+https://github.com/ArminJo
+https://github.com/adafruit
+https://github.com/bblanchon
+https://github.com/homieiot
+https://figch.de
+
+And some more people from https://ctdo.de/ which either don't want to be named here or don't have a linkable presence.
