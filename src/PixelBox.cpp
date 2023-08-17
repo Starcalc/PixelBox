@@ -652,6 +652,11 @@ void onHomieEvent(const HomieEvent& hevent) {
       // Do whatever you want when the device is about to reset
       break;
     case HomieEventType::WIFI_CONNECTED:
+      NeoPixelMatrix.clear();
+      if (NeoPixelMatrix.numPixels() > 0) {
+        NeoPixelMatrix.setBrightness(lastbrightness);
+        stopAfterCompletion = backup_stopAfterCompletion;
+      }
       // Do whatever you want when Wi-Fi is connected in normal mode
       break;
     case HomieEventType::WIFI_DISCONNECTED:
@@ -671,6 +676,7 @@ void onHomieEvent(const HomieEvent& hevent) {
         }
       break;
     case HomieEventType::MQTT_READY:
+      NeoPixelMatrix.clear();
       if (NeoPixelMatrix.numPixels() > 0) {
         NeoPixelMatrix.setBrightness(lastbrightness);
         stopAfterCompletion = backup_stopAfterCompletion;
@@ -810,7 +816,7 @@ void loop() {
         onSetEffect(HomieRange(), "scanner");
         break;
       case 1:
-        onSetEffect(HomieRange(), "text|Welcome");
+        onSetEffect(HomieRange(), "text|Welcome Pixelbox");
         break;
       case 2:
         onSetEffect(HomieRange(), "plasma");
