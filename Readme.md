@@ -1,5 +1,5 @@
 # Pixelbox Firmware
-====================
+-----
 
 ## About
 Shows effects on different kind of models created with WS2812b-Stripes. The models can be simple stripes oder any rectangular shape. The configuration is done via a config.json and can be controlled via MQTT.
@@ -207,15 +207,15 @@ If you go to the "PlatformIO"-Icon in Visual Studio Code (it's an alien skull), 
 d1_mini -> General -> Upload   -- to upload the code itself
 d1_mini -> Platform -> Upload Filesystem Image   -- to upload the config-File
 
-
+-----
 # Thanks
 
 A big shoutout to these people who made this Pixelbox possible:
 
-https://github.com/ArminJo
-https://github.com/adafruit
-https://github.com/bblanchon
-https://github.com/homieiot
-https://figch.de
+* https://github.com/ArminJo
+* https://github.com/adafruit
+* https://github.com/bblanchon
+* https://github.com/homieiot
+* https://figch.de
 
 And some more people from https://ctdo.de/ which either don't want to be named here or don't have a linkable presence.
