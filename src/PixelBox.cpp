@@ -32,7 +32,7 @@
 #define ENABLE_MATRIX_PATTERN_FIRE
 #define ENABLE_MATRIX_PATTERN_SNOW
 
-#define NOWIFI // Disable WIFI alltogether
+// #define NOWIFI // Disable WIFI alltogether
 // #define APONLY // Disable Homie with Wifi and MQTT, but open an AP with a Web Application
 
 #include <Arduino.h>
@@ -202,7 +202,7 @@ bool onSetBrightness(const HomieRange& range, const String& value) {
 	if (brightness < 0 || brightness > 255) {
 		return false;
 	}
-	NeoPixelMatrix.setBrightness(brightness);
+	NeoPixelMatrix.setBrightnessValue(brightness);
 #ifndef NOWIFI
 	homieNode.setProperty("brightness").send(value);
 #endif
@@ -386,7 +386,7 @@ bool onSetEffect(const HomieRange& range, const String& value) {
   else if (command == "fade") {
     // TODO: Instable
     NeoPixelMatrix.infinite_repetitions = true;
-    NeoPixelMatrix.Fade(NeoPatterns::Wheel(tColor), NeoPatterns::Wheel(tColor + 0x80), 64, 0);
+    NeoPixelMatrix.Fade(NeoPatterns::Wheel(tColor), NeoPatterns::Wheel(tColor + 0x80), 1000, 1);
   //   strip.Fade(strip.Color(255, 0, 0), strip.Color(0, 0, 255), 200, 100);
   }
   else if (command == "randomfade") {
@@ -654,7 +654,7 @@ void onHomieEvent(const HomieEvent& hevent) {
     case HomieEventType::WIFI_CONNECTED:
       NeoPixelMatrix.clear();
       if (NeoPixelMatrix.numPixels() > 0) {
-        NeoPixelMatrix.setBrightness(lastbrightness);
+        NeoPixelMatrix.setBrightnessValue(lastbrightness);
         stopAfterCompletion = backup_stopAfterCompletion;
       }
       // Do whatever you want when Wi-Fi is connected in normal mode
@@ -678,7 +678,7 @@ void onHomieEvent(const HomieEvent& hevent) {
     case HomieEventType::MQTT_READY:
       NeoPixelMatrix.clear();
       if (NeoPixelMatrix.numPixels() > 0) {
-        NeoPixelMatrix.setBrightness(lastbrightness);
+        NeoPixelMatrix.setBrightnessValue(lastbrightness);
         stopAfterCompletion = backup_stopAfterCompletion;
       }
       // Do whatever you want when MQTT is connected in normal mode
@@ -840,8 +840,7 @@ void loop() {
         onSetEffect(HomieRange(), "theaterchase");
         break;
       case 9:
-        onSetInterval(HomieRange(), "500");
-        onSetEffect(HomieRange(), "fade"); // Too fast / broken
+        onSetEffect(HomieRange(), "fire");
         break;
       case 10:
         onSetInterval(HomieRange(), "200");
@@ -854,7 +853,7 @@ void loop() {
         onSetEffect(HomieRange(), "heart");
         break;
       case 13:
-        onSetEffect(HomieRange(), "ball");
+        onSetEffect(HomieRange(), "ball"); // Looks nicer on a singular strip
         break;
       case 14:
         onSetEffect(HomieRange(), "plasma4");
