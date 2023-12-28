@@ -242,6 +242,18 @@ void NewMatrix::YourEffectUpdate() {
 }
 ```
 
+## List of necessary materials
+
+Here's what you'll need:
+* ESP8266 (I use the WEMOS D1 mini R2, you can easily find it on chinese selling websites)
+* WS2812B-Strips with 30 LEDs/m. You'll need 64 pixels for a 8x8 Pixelbox, so at least 3 meters.
+* Small wires
+* Micro-USB-Power supply (5V, preferably 2A)
+* Soldering equipment
+* poplar wood, 4mm strong
+* frosted plastic, 3-4mm strong, preferably white
+* Micro-USB-Cable to connect to your PC (to transfer the initial program)
+
 ## How to build the casing
 
 In the directory "Lasercutter" are the samples you can use for your lasercutter. You'll need one backplane, four sides all made from wood (we used poplar wood), 4mm strong. The cover should be a frosted plastic, 3-4mm strong, preferably white.
