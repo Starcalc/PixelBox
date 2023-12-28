@@ -202,6 +202,46 @@ This color will be used for the following effects:
 * *theaterchase*
 * *fade*
 
+## How to add another effect
+
+The *correct* way would be to create your own Class which inherits NewMatrix(), but I guess you could just change the NewMatrix.hpp and NewMatrix.h for yourself.
+
+* Add your string which triggers the effect to `onSetEffect()` in `PixelBox.cpp` like this:
+```
+  else if (command == "youreffect")
+    NeoPixelMatrix.YourEffect();
+  }
+```
+* Add your "PATTERN"-Definition in NewMatrix.h and increase the `LASTNEWMATRIX_PATTERN`-Counter
+```
+#define PATTERN_YOUREFFECT      (PATTERN_SNAKE + 13)
+#define LAST_NEWMATRIX_PATTERN  (PATTERN_SNAKE + 13)
+```
+* Add your Update()-Call to the generic Update()-Call in NewMatrix.hpp:
+```
+case PATTERN_YOUREFFECT:
+    YourPatternUpdate();
+    break;
+```
+* Add the definition of your Pattern-Setup and Pattern-Update-Routines in NewMatrix.h:
+```
+void YourEffect();
+void YourEffectUpdate();
+```
+* Add the code which executes your effect to NewMatrix.hpp:
+```
+void NewMatrix::YourEffect() {
+    // Set up your effect, e.g. clear or define variables
+    clear();
+    show();
+}
+
+void NewMatrix::YourEffectUpdate() {
+    show();
+    lastUpdate = millis();
+}
+```
+
 ## How to build the casing
 
 In the directory "Lasercutter" are the samples you can use for your lasercutter. You'll need one backplane, four sides all made from wood (we used poplar wood), 4mm strong. The cover should be a frosted plastic, 3-4mm strong, preferably white.
