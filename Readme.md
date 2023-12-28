@@ -212,23 +212,23 @@ The *correct* way would be to create your own Class which inherits NewMatrix(), 
     NeoPixelMatrix.YourEffect();
   }
 ```
-* Add your "PATTERN"-Definition in NewMatrix.h and increase the `LASTNEWMATRIX_PATTERN`-Counter
+* Add your "PATTERN"-Definition in `NewMatrix.h` and increase the `LASTNEWMATRIX_PATTERN`-Counter
 ```
 #define PATTERN_YOUREFFECT      (PATTERN_SNAKE + 13)
 #define LAST_NEWMATRIX_PATTERN  (PATTERN_SNAKE + 13)
 ```
-* Add your Update()-Call to the generic Update()-Call in NewMatrix.hpp:
+* Add your Update()-Call to the generic Update()-Call in `NewMatrix.hpp`:
 ```
 case PATTERN_YOUREFFECT:
     YourPatternUpdate();
     break;
 ```
-* Add the definition of your Pattern-Setup and Pattern-Update-Routines in NewMatrix.h:
+* Add the definition of your Pattern-Setup and Pattern-Update-Routines in `NewMatrix.h`:
 ```
 void YourEffect();
 void YourEffectUpdate();
 ```
-* Add the code which executes your effect to NewMatrix.hpp:
+* Add the code which executes your effect to `NewMatrix.hpp`:
 ```
 void NewMatrix::YourEffect() {
     // Set up your effect, e.g. clear or define variables
